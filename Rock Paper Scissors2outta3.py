@@ -14,16 +14,22 @@ cpu = choice[randint(0,2)]
 
 player = False
 
-#Game Start
+#funcion for score system
 
-def score(s):
-    if player == ("Rock" and cpu == "Paper") or (player == "Paper" and cpu == "Scissors") or (player == "Scissors" and cpu == "Rock")
+def score():
+    if (player == "Rock" and cpu == "Paper") or (player == "Paper" and cpu == "Scissors") or (player == "Scissors" and cpu == "Rock"):
         cpu_Score.append(1)
         if len(cpu_Score) > 1:
             print("CPU has", len(cpu_Score), "points")
         else:
             print("CPU has", len(cpu_Score), "point")
-    elif
+    else:
+        Score.append(1)
+        if len(Score) > 1:
+            print("Player has", len(Score), "points")
+        else:
+            print("Player has", len(Score), "point")
+
 
 while player == False:
     player = input("Rock, Paper, Scissors? \n")
@@ -31,9 +37,9 @@ while player == False:
 ##best 2 out of 3 wins.
 
     if len(Score) >= 2:
-        print("Player has won!")
+        input("Player has won!, Press Enter to Close the Program.")
     elif len(cpu_Score) >= 2:
-        print("Computer has won!")
+        input("Computer has won!, Press Enter to Close the Program.")
     else:
 
 ##Continuing the game after checking for points.
@@ -48,73 +54,31 @@ while player == False:
 
         elif player == "Rock":
             if cpu == "Paper":
-                print("You lose", cpu, "covers", player)
-
-#Computer gains a point
-
-                cpu_Score.append(1)
-                if len(cpu_Score) > 1:
-                    print("CPU has", len(cpu_Score), "points")
-                else:
-                    print("CPU has", len(cpu_Score), "point")
-
-##Player gains a point
-
+                print("You lose,", cpu, "covers", player)
+                score()
             else:
-                print("You win", player, "Crushes", cpu)
-                Score.append(1)
-                if len(Score) > 1:
-                    print("Player has", len(Score), "points")
-                else:
-                    print("Player has", len(Score), "point")
+                print("You win,", player, "Crushes", cpu)
+                score()
 
 ##Player Chooses Paper
 
         elif player == "Paper":
             if cpu == "Scissors":
                 print("You lose", cpu, "Cuts", player)
-
-#Computer gains a point
-
-                cpu_Score.append(1)
-                if len(cpu_Score) > 1:
-                    print("CPU has", len(cpu_Score), "points")
-                else:
-                    print("CPU has", len(cpu_Score), "point")
+                score()
             else:
                 print("You win", player, "Covers", cpu)
-
-#player gains a point
-
-                Score.append(1)
-                if len(Score) > 1:
-                    print("Player has", len(Score), "points")
-                else:
-                    print("Player has", len(Score), "point")
+                score()
 
 ##Player Chooses Scissors
 
         elif player == "Scissors":
             if cpu == "Rock":
-                print("You lose", cpu, "Crushes", player)
-
-#Computer gains a point
-
-                cpu_Score.append(1)
-                if len(cpu_Score) > 1:
-                    print("CPU has", len(cpu_Score), "points")
-                else:
-                    print("CPU has", len(cpu_Score), "point")
+                print("You lose,", cpu, "Crushes", player)
+                score()
             else:
-                print("You win", player, "Cuts", cpu)
-
-##player gains a point
-
-                Score.append(1)
-                if len(Score) > 1:
-                    print("Player has", len(Score), "points")
-                else:
-                    print("Player has", len(Score), "point")
+                print("You win,", player, "Cuts", cpu)
+                score()
 
 ##Player inputs anything but items in list.
 
