@@ -7,7 +7,7 @@ cpu_Score = []
 
 #Choices for Player and CPU
 
-choice = ["Rock", "Paper," "Scissors"]
+choice = ["Rock", "Paper", "Scissors"]
 cpu = choice[randint(0,2)]
 
 #Start of a loop
@@ -15,6 +15,15 @@ cpu = choice[randint(0,2)]
 player = False
 
 #Game Start
+
+def score(s):
+    if player == ("Rock" and cpu == "Paper") or (player == "Paper" and cpu == "Scissors") or (player == "Scissors" and cpu == "Rock")
+        cpu_Score.append(1)
+        if len(cpu_Score) > 1:
+            print("CPU has", len(cpu_Score), "points")
+        else:
+            print("CPU has", len(cpu_Score), "point")
+    elif
 
 while player == False:
     player = input("Rock, Paper, Scissors? \n")
